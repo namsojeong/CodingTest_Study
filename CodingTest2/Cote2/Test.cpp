@@ -3,22 +3,23 @@
 #include<algorithm>
 
 using namespace std;
-int n;
-vector<pair<int, int>> inputV ;
+int a, b, c;
+vector<int> v;
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-
-	cin >> n;
-
-	for (int i = 0; i < n; i++)
+	while (true)
 	{
-		int a, b;
-		cin >> a >> b;
-		inputV.push_back(make_pair(a, b));
+		cin >> a >> b >> c;
+		if (a == 0 && b == 0 && c == 0) break;
+		v.clear();
+		v.push_back(a);
+		v.push_back(b);
+		v.push_back(c);
+		sort(v.rbegin(), v.rend());
+		bool isRight = (v[0] * v[0]) == ((v[1] * v[1]) + (v[2] * v[2])) ? true : false;
+		if (isRight)cout << "right" << '\n';
+		else cout << "wrong" << '\n';
 	}
-	sort(inputV.begin(), inputV.end());
-
-	for (int i = 0; i < n; i++)
-		cout << inputV[i].first << " " << inputV[i].second << '\n';
+	return 0;
 }
