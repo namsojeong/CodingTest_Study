@@ -3,23 +3,26 @@
 #include<algorithm>
 
 using namespace std;
-int a, b, c;
+int n, a;
 vector<int> v;
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	while (true)
+	cin >> n;
+
+	for (int i = 0; i < n; i++)
 	{
-		cin >> a >> b >> c;
-		if (a == 0 && b == 0 && c == 0) break;
 		v.clear();
-		v.push_back(a);
-		v.push_back(b);
-		v.push_back(c);
-		sort(v.rbegin(), v.rend());
-		bool isRight = (v[0] * v[0]) == ((v[1] * v[1]) + (v[2] * v[2])) ? true : false;
-		if (isRight)cout << "right" << '\n';
-		else cout << "wrong" << '\n';
+		for (int i = 0; i < 10; i++)
+		{
+			cin >> a;
+			v.push_back(a);
+		}
+		sort(v.begin(), v.end());
+		v.pop_back();
+		v.pop_back();
+		cout << v.back() << '\n';
 	}
+
 	return 0;
 }

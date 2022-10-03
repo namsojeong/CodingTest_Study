@@ -37,15 +37,12 @@ int main()
 	for (int i = 0; i < n; i++)
 	{
 		if (i == 8) tempI = 8;
-		else if (i > 8) tempI++;
-		else tempI = 0;
+		tempJ = 0;
 		cin>>temp;
 		for (int j = 0; j < m; j++)
 		{
 			if (j == 8) tempJ = 8;
-			else if (j > 8) tempJ++;
-			else tempJ = 0;
-			if (WB[i-tempI][j-tempJ] != temp[j])	cntW++;
+			if (WB[i - tempI][j - tempJ] != temp[j])	cntW++;
 			if (BW[i - tempI][j - tempJ] != temp[j])	cntB++;
 		}
 	}
