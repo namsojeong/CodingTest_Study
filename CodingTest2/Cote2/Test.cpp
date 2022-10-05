@@ -1,19 +1,42 @@
 #include<iostream>
 
 using namespace std;
-int n, k;
 
-int Fact(int num, int all, int cnt)
-{
-	if (cnt == 0) return all;
-	return Fact(num-1, all*num, cnt-1);
-}
+int a, b;
+int r = 1;
+bool isFind = false;
+
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	cin >> n >> k;
-	cout << Fact(n, 1, k) / Fact(k, 1, k);
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++)
+	{
+		r = 1;
+		cin >> a >> b;
 
-	return 0;
+		if (a > b) swap(a, b);
+
+		while (a > 1 && b > 1)
+		{
+			isFind = false;
+			for (int i = 2; i <= a; i++)
+			{
+				if (a % i == 0 && b % i == 0)
+				{
+					isFind = true;
+					a /= i;
+					b /= i;
+					r *= i;
+					break;
+				}
+				else isFind = false;
+			}
+			if (!isFind) break;
+		}
+		cout << r * a * b<<'\n';
+	}
+	
 }
