@@ -1,32 +1,21 @@
-﻿#include<iostream>
+﻿#include <iostream>
 using namespace std;
-
-int n = 0, one = 0, zero = 0;
-int num = 0;
-
-int fibonacci(int n) {
-    if (n == 0) {
-        zero++;
-        return 0;
-    }
-    else if (n == 1) {
-        one++;
-        return 1;
-    }
-    else {
-        return fibonacci(n-1) + fibonacci(n-2);
-    }
-}
 
 int main()
 {
-    cin >> n;
+    int num, n, a[41] = { 1 }, b[41] = { 0, 1 };
 
-    for (int i = 0; i < n; i++)
+    for (int i = 2; i <= 40; i++)
     {
-        cin >> num;
-        fibonacci(num);
+        a[i] = a[i - 1] + a[i - 2];
+        b[i] = b[i - 1] + b[i - 2];
     }
-    cout << "0 " << zero << '\n';
-    cout << "1 " << one;
+
+    cin >> num;
+    for (int i = 0; i < num; i++)
+    {
+        cin >> n;
+        cout << a[n] << ' ' << b[n] << endl;
+    }
+    return 0;
 }
