@@ -1,37 +1,37 @@
 #include<iostream>
-#include<stack>
+#include<vector>
+#include<algorithm>
 
 using namespace std;
-int cnt = 0;
-stack<string> qs;
-stack<string> qr;
-string str;
+vector<string> str;
+string s;
+int n;
 
+bool compare(string a, string b) {
+	if (a.size() == b.size()) {
+		return a.compare(b) < 0;
+	}
+	else {
+		return a.size() < b.size();
+	}
+}
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	cin >> cnt;
-
-	for (int i = 0; i < cnt; i++)
+	cin >> n;
+	for (int i = 0; i < n; i++)
 	{
-		cin >> str;
-		if (qs.empty()) qs.push(str);
-		else
-		{
-			while (!qs.empty())
-			{
-				string last = qs.top();
-				if (last.size() > str.size())
-				{
-					qr.push(last);
-					qr.pop();
-				}
-			}
-			qs.push(str);
-		}
+		cin >> s;
+		str.push_back(s);
+	}
+	sort(str.begin(), str.end(), compare);
+
+
+	for (int i = 0; i < n; i++)
+	{
+		if (i >= 1) if (str[i - 1]== str[i]) continue;
+		cout << str[i] << '\n';
 	}
 
 }

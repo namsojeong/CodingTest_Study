@@ -1,52 +1,71 @@
-#include<iostream>
-#include<vector>
-
+#include <iostream>
+#include <string>
+#include <algorithm>
 using namespace std;
-
-int m, n, cntB=0, cntW=0;
-
-string BW[8] = {
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB"
-};
+     int temp;
+    int minNum = 12345;
+    int n, m;
 string WB[8] = {
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW",
-	"WBWBWBWB",
-	"BWBWBWBW"
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW"
 };
-int main()
+string BW[8] = {
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB",
+        "BWBWBWBW",
+        "WBWBWBWB"
+};
+string str[50];
+int WB_cnt(int x, int y)
 {
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    int cnt = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (str[x + i][y + j] != WB[i][j])
+                cnt++;
+        }
 
-	cin >> n >> m;
+    }
+    return cnt;
+}
+int BW_cnt(int x, int y)
+{
+    int cnt = 0;
+    for (int i = 0; i < 8; i++)
+    {
+        for (int j = 0; j < 8; j++)
+        {
+            if (str[x + i][y + j] != BW[i][j])
+                cnt++;
+        }
 
-	string temp;
-	int tempI = 0;
-	int tempJ = 0;
-	for (int i = 0; i < n; i++)
-	{
-		if (i == 8) tempI = 8;
-		tempJ = 0;
-		cin>>temp;
-		for (int j = 0; j < m; j++)
-		{
-			if (j == 8) tempJ = 8;
-			if (WB[i - tempI][j - tempJ] != temp[j])	cntW++;
-			if (BW[i - tempI][j - tempJ] != temp[j])	cntB++;
-		}
-	}
-	cout << cntW<<endl;
-	cout << cntB;
-	//cout << min(cntW, cntB);
+    }
+    return cnt;
+}
+int main() {
+    cin >> n >>m;
+    for (int i = 0; i < n; i++)
+        cin >> str[i];
+    for (int i = 0; i + 8 <= n; i++)
+    {
+        for (int j = 0; j + 8 <= m; j++)
+        {
+            temp = min(WB_cnt(i, j), BW_cnt(i, j));
+            minNum = (temp < minNum) ? temp : minNum;
+        }
+    }
+    cout << minNum;
+    return 0;
 }
