@@ -1,22 +1,15 @@
 #include<iostream>
+#include<queue>
 using namespace std;
 
+#define MAX 100
+
 int n, k, cnt=0;
+int dy[4] = { -1, 0, 1, 0 };
+int dx[4] = { 0, 1, 0, -1 };
+int visited[MAX][MAX];
 int minNum = 100000;
-//
-//void dfs(int a, int cnt)
-//{
-//	if (a > k)	return;
-//	if (a == k)
-//	{
-//		if (minNum > cnt) minNum = cnt;
-//		cout << minNum<<'\n';
-//		return;
-//	}
-//	dfs(a * 2, cnt++);
-//	dfs(a+1, cnt++);
-//	dfs(a - 1, cnt++);
-//}
+queue<pair<int, int>> q;
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
@@ -25,18 +18,16 @@ int main()
 
 	while (n != k)
 	{
-		if (n > k)
+		if (k/2 >= n)
 		{
-			n -= 1;
+			n *= 2;
 		}
-		else if (n < k)
+		else
 		{
-			if (n * 2 <= k)	n *= 2;
-			else n += 1;
+			
 		}
 		cnt++;
 	}
 
 	cout << cnt;
-	//cout << minNum;
 }

@@ -1,27 +1,18 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
-
+#include <iostream>
+#include <vector>
 using namespace std;
-int X;
-int cnt = 0;
-int main()
-{
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	cin >> X;
-
-	while (X > 1)
-	{
-		if (X % 3 == 0)
-			X /= 3;
-		else if (X % 2 == 0)
-			X /= 2;
-		//else if (X - 1 > 1 && ((X - 1) % 2 == 0 || (X - 1) % 3 == 0))
-		else
-			X -= 1;
-		cnt++;
+int n;
+int main() {
+	cin >> n;
+	vector<int> arr(n + 1);
+	arr[1] = 0;
+	for (int i = 2; i <= n; i++) {
+		arr[i] = arr[i - 1] + 1;
+		if (!(i % 3)) arr[i] = min(arr[i], arr[i / 3] + 1);
+		if (!(i % 2)) arr[i] = min(arr[i], arr[i / 2] + 1);
 	}
 
-	cout << cnt;
+	cout << arr[n] << endl;
+	return 0;
 }
