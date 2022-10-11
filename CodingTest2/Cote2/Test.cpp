@@ -1,18 +1,20 @@
 #include<iostream>
 
 using namespace std;
-string str;
+int n;
 
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	cin >> str;
-	for (int i = 0; i < str.size(); i++)
+	cin >> n;
+	for (int i = n; i > 0; i--)
 	{
-		if (isupper(str[i])) str[i] = tolower(str[i]);
-		else if(islower(str[i])) str[i] = toupper(str[i]);
+		for (int j = 0; j < n; j++)
+		{
+			if (j < n - i) cout << " ";
+			else cout << "*";
+		}
+		cout << '\n';
 	}
-
-	cout << str;
 }
