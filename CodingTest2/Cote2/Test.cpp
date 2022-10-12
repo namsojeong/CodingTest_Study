@@ -8,13 +8,13 @@ int main()
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
 	cin >> n;
-	for (int i = n; i > 0; i--)
+	for (int i = 0; i <n; i++)
 	{
-		for (int j = 0; j < n; j++)
+		for (int j = n-i; j >0; j--)
 		{
-			if (j < n - i) cout << " ";
-			else cout << "*";
+			cout << "*";
 		}
 		cout << '\n';
 	}
+	
 }
