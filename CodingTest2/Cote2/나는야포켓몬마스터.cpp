@@ -26,12 +26,14 @@ int main()
 		cin >> str; 
 		r.push_back(str);
 	}
+
+	vector<string>::iterator iter;
 	for (int i = 0; i < m; i++)
 	{
 		string s = r[i];
 		if (atoi(s.c_str()) == 0)
 		{
-			vector<string>::iterator iter = find(vecString.begin(), vecString.end(), s);
+			iter = find(vecString.begin(), vecString.end(), s);
 			cout << distance(vecString.begin(), iter)+1<<'\n';
 		}
 		else
