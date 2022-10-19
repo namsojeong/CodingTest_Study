@@ -120,5 +120,11 @@
     <ClCompile Include="별찍기12.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="별찍기15.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="적록색약.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -2,28 +2,24 @@
 
 using namespace std;
 
+int a, b, n;
 bool isS = false;
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	int a, b;
 	cin >> a >> b;
-
-	for (int i = a; i <= b; i++)
+	n = a;
+	while (n <= b)
 	{
-		for (int j = 2; j < i; j++)
+		for (int j = 2; j < n; j++)
 		{
 			isS = false;
-			if (i % j == 0&&i!=j)break;
+			if (n % j == 0 && n != j) break;
 			isS = true;
 		}
-		if (isS)
-		{
-			cout << i << '\n';
-		}
+		if (isS) cout << n << '\n';
+		n++;
 	}
 }
