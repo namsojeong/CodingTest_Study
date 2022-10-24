@@ -1,44 +1,29 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
 using namespace std;
 
-vector<string> r;
-vector<string> vecString;
-vector<int> vecInt;
+map<string, int> pokemon;
+vector<string> result;
+vector<string> name;
+string temp;
 int n, m;
-string str;
 
-int main()
-{
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-
+int main() {
 	cin >> n >> m;
-
-	for (int i = 0; i < n; i++)
-	{
-		cin >> str;
-		vecInt.push_back(i + 1);
-		vecString.push_back(str);
-	}
-	for (int i = 0; i < m; i++)
-	{
-		cin >> str; 
-		r.push_back(str);
+	for (int i = 1; i <= n; i++) {
+		cin >> temp;
+		name.push_back(temp);
+		pokemon.insert({ temp, i });
 	}
 
-	vector<string>::iterator iter;
-	for (int i = 0; i < m; i++)
-	{
-		string s = r[i];
-		if (atoi(s.c_str()) == 0)
-		{
-			iter = find(vecString.begin(), vecString.end(), s);
-			cout << distance(vecString.begin(), iter)+1<<'\n';
-		}
-		else
-		{
-			cout << vecString[atoi(s.c_str())-1] << '\n';
-		}
+	for (int i = 0; i < m; i++) {
+		cin >> temp;
+		if (temp[0] >= 65 && temp[0] <= 90) result.push_back(to_string(pokemon[temp]));
+		else result.push_back(name[stoi(temp) - 1]);
 	}
+
+	for (int i = 0; i < result.size(); i++)
+		cout << result[i] << '\n';
 }
