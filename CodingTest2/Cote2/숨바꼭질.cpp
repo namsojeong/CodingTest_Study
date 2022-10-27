@@ -1,33 +1,52 @@
 #include<iostream>
 #include<queue>
+#include<vector>
 using namespace std;
+const int MAX = 100001;
+int n, k, cnt = 0, x;
+bool visited[MAX];
 
-#define MAX 100
+int main() {
+    cin >> n >> k;
+   
+    queue<pair<int, int>> q;
+    visited[n] = true;
+    q.push({ 0, n });
 
-int n, k, cnt=0;
-int dy[4] = { -1, 0, 1, 0 };
-int dx[4] = { 0, 1, 0, -1 };
-int visited[MAX][MAX];
-int minNum = 100000;
-queue<pair<int, int>> q;
-int main()
-{
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+    while (!q.empty()) {
+        cnt = q.front().first;
+        x = q.front().second;
+        q.pop();
 
-	cin >> n >> k;
-
-	while (n != k)
-	{
-		if (k/2 >= n)
-		{
-			n *= 2;
-		}
-		else
-		{
-			
-		}
-		cnt++;
-	}
-
-	cout << cnt;
+        if (x == k)
+        {
+            cout << cnt;
+            break;
+        }
+        if (x + 1 >= 0 && x + 1 < 100001)
+        {
+            if (!visited[x + 1])
+            {
+                visited[x + 1] = true;
+                q.push({ cnt + 1, x + 1 });
+            }
+        }
+        if (x - 1 >= 0 && x - 1 < 100001)
+        {
+            if (!visited[x - 1])
+            {
+                visited[x - 1] = true;
+                q.push({ cnt + 1, x - 1 });
+            }
+        }
+        if (x * 2 >= 0 && x * 2 < 100001)
+        {
+            if (!visited[x * 2])
+            {
+                visited[x * 2] = true;
+                q.push({ cnt + 1, x * 2 });
+            }
+        }
+    }
+    return 0;
 }
