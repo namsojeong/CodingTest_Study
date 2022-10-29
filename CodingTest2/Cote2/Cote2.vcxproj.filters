@@ -144,5 +144,8 @@
     <ClCompile Include="모음개수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="아무래도이문제는A번난이도인것같다.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
