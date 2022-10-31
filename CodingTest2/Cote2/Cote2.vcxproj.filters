@@ -147,5 +147,14 @@
     <ClCompile Include="아무래도이문제는A번난이도인것같다.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="3의배수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="지뢰찾기.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="점수계산.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
