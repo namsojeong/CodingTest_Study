@@ -156,5 +156,11 @@
     <ClCompile Include="점수계산.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="요세푸스문제.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="감소하는수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
