@@ -162,5 +162,8 @@
     <ClCompile Include="감소하는수.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="럭비클럽.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
