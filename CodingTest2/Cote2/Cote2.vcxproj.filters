@@ -165,5 +165,17 @@
     <ClCompile Include="럭비클럽.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="달팽이.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="암호해독.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="암호.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="인공지능시계.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
