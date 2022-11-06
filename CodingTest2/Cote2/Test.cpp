@@ -1,8 +1,17 @@
 #include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-int a, s;
+vector<int> vec;
+int a;
 int main() {
-    cin >> a>>s;
-    cout << (s * 2) - a;
+    for (int i = 0; i < 3; i++)
+    {
+        cin >> a;
+        vec.push_back(a);
+    }
+    sort(vec.begin(), vec.end());
+    cout << vec[0] << " " << vec[1] << " " << vec[2];
+
 }
