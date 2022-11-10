@@ -1,12 +1,12 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
+#include<set>
 
 using namespace std;
 
-vector<string> v, result;
-int n, m, cnt = 0;
+int n, m;
 string str;
+set<string> s;
+set<string> res;
 
 int main()
 {
@@ -14,26 +14,24 @@ int main()
 
 	cin >> n >> m;
 
-	for (int i = 0; i < n + m; i++)
+	for (int i = 0; i < n; i++)
 	{
 		cin >> str;
-		v.push_back(str);
-	}
-	sort(v.begin(), v.end());
-
-	for (int i = 0; i < n + m - 1; i++)
-	{
-		if (v[i] == v[i+1])
-		{
-			cnt++;
-			result.push_back(v[i]);
-		}
+		s.insert(str);
 	}
 
-	cout << cnt << '\n';
-	for (int i = 0; i < result.size(); i++)
+	for (int i = 0; i < m; i++)
 	{
-		cout << result[i] << '\n';
+		cin >> str;
+		if (s.find(str) != s.end()) res.insert(*(s.find(str)));
+	}
+
+	cout << res.size() << '\n';
+
+	set<string>::iterator rs = res.begin();
+	for (rs; rs != res.end(); rs++)
+	{
+		cout << *rs << '\n';
 	}
 
 }

@@ -1,44 +1,33 @@
 #include <iostream>
-#include <unordered_map>
+#include <set>
 using namespace std;
 
-unordered_map<char, int> m;
 int n, cnt = 0;
+
+string str;
+set<char> s;
 
 int main() {
 	cin >> n;
 
 	for (int i = 0; i < n; i++)
 	{
-		string str;
 		cin >> str;
-
-		pair <char, int> beforepair;
-		bool isCor = true;
+		s.clear();
+		char c = str[0];
 		for (int j = 0; j < str.length(); j++)
 		{
-			if (j == 0)
+			if (s.find(str[j]) != s.end() && c != str[j]) break;
+			else
 			{
-				m.insert({ str[j], j });
-				beforepair.first = str[j];
-				beforepair.second = j;
-				continue;
+				s.insert(str[j]);
+				c = str[j];
 			}
 
-			if (str[j] == beforepair.first)
-			{
-				if ((j - beforepair.second) > 1)
-				{
-					isCor = false;
-					break;
-				}
-				else
-				{
-					m.insert({ str[j], j });
-				}
-			}
+			if (j == str.length()-1) cnt++;
 		}
+	}
 
-		if(isCOr )
+	cout << cnt;
 
 }
