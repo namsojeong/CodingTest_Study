@@ -210,5 +210,8 @@
     <ClCompile Include="파티가 끝나고 난 뒤.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="동전0.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
