@@ -1,35 +1,25 @@
 #include<iostream>
-#include<vector>
-#include<algorithm>
 
 using namespace std;
 
-int n, k, temp, cnt = 0, s=0;
-vector<int> vec;
+string arr;
+int alphabet[26] = { 0, }; //알파벳 개수를 저장하기 위한 배열
 
 int main()
 {
-	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+	ios::sync_with_stdio(0);
+	cin.tie(0);
 
-	cin >> n >> k;
-	for (int i = 0; i < n; i++)
-	{
-		cin >> temp;
-		if (temp > k) continue;
-		vec.push_back(temp);
+	cin >> arr;
+
+	//a~z까지 차례로 숫자0부터 25의 값을 지정
+	for (int i = 0; i < arr.size(); i++) {
+		alphabet[arr[i] - 97] += 1;
 	}
 
-	sort(vec.begin(), vec.end());
-
-	temp = k;
-	s = vec.size();
-	for (int i = 0; i < s; i++)
-	{
-		cnt += temp/ vec.back();
-		temp %= vec.back();
-		vec.pop_back();
-		if (temp <= 0)break;
+	for (int i = 0; i < 26; i++) {
+		cout << alphabet[i] << ' ';
 	}
 
-	cout << cnt;
+	return 0;
 }
