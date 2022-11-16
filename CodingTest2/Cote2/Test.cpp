@@ -1,17 +1,16 @@
 #include <iostream>
-#include <vector>
-#include <algorithm>
 using namespace std;
 
-vector<int> vec;
-int a;
+int n, a, b;
 int main() {
-    for (int i = 0; i < 3; i++)
+    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+
+    cin >> n;
+
+    for (int i = 0; i < n; i++)
     {
-        cin >> a;
-        vec.push_back(a);
+        cin >> a>>b;
+        cout << a + b << '\n';
     }
-    sort(vec.begin(), vec.end());
-    cout << vec[0] << " " << vec[1] << " " << vec[2];
 
 }
