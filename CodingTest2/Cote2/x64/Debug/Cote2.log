@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+﻿  Test.cpp
+=======
+﻿  동전0.cpp
+D:\CodingTest\CodingTest2\Cote2\동전0.cpp(25,16): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> parent of ffcd179 (22-11-14)
+  Cote2.vcxproj -> D:\CodingTest\CodingTest2\Cote2\x64\Debug\Cote2.exe
