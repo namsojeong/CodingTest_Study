@@ -1,16 +1,33 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
-int n, a, b;
+
+int total, n, m, cnt, num;
+vector<int> vec;
+double result;
 int main() {
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+	cin >> n;
 
-    cin >> n;
+	for (int i = 0; i < n; i++) {
+		total = 0, cnt = 0;
+		vec.clear();
+		cin >> m;
 
-    for (int i = 0; i < n; i++)
-    {
-        cin >> a>>b;
-        cout << a + b << '\n';
-    }
+		for (int j = 0; j < m; j++) {
+			cin >> num;
+			total += num;
+			vec.push_back(num);
+		}
+		total /= m;
 
+		for (int j = 0; j < m; j++) {
+			if (vec[j] > total) cnt++;
+		}
+		result = (double)cnt / m * 100;
+
+		cout << fixed;
+		cout.precision(3);
+		cout << result << "%\n";
+	}
 }
