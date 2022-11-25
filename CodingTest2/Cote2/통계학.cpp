@@ -1,48 +1,52 @@
 #include<iostream>
 #include<vector>
 #include<math.h>
-#include<set>
+#include<map>
 #include<algorithm>
 
 using namespace std;
 
 int n, num;
-double total = 0;
-int maxNum = 0;
+int a, b, c, d;
 vector<int> vec;
-set<int> many;
+map<int, int> m;
 
+static bool comp(pair<int, int>& a, pair<int, int>& b) {
+	if (a.second == b.second) return a.first < b.first;
+	return a.second > b.second;
+}
 int main()
 {
 	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
 	cin >> n;
+	int idx;
 	for (int i = 0; i < n; i++)
 	{
 		cin >> num;
+		a += num;
+		m[num]++;
 		vec.push_back(num);
 	}
 
-	total = 0;
-	for (int i = 0; i < n; i++)
+	if (n == 1)
 	{
-		total += vec[i];
+		a = b = c = vec[0];
+		d = 0;
+		cout << a << "\n" << b << "\n" << c << "\n" << d;
+		return 0;
 	}
-	total = round(total / n);
-	cout << total << '\n';
 
-	sort(vec.begin(), vec.end());	
-	cout << vec[n / 2] << '\n';
+	sort(vec.begin(), vec.end());
+	a = round((float)a / n);
+	b = vec[n / 2];
+	d = (vec[n - 1]) - (vec[0]);
 
-	for (int i = 0; i < n; i++)
-	{
-		int cnt = count(vec.begin(), vec.end(), vec[i]);
-		if (cnt >= vec[maxNum])
-		{
-			maxNum = i;
-			many.insert(i);
-		}
-	}
-	cout << vec[maxNum] << '\n';
-	cout << vec[n - 1] - vec[0] << '\n';
+	vector<pair<int, int>> v(m.begin(), m.end());
+	sort(v.begin(), v.end(), comp);
+
+	if (v[0].second == v[1].second) c = v[1].first;
+	else c = v[0].first;
+
+	cout << a << "\n" << b << "\n" << c << "\n" << d;
 }
