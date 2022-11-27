@@ -1,18 +1,17 @@
 #include <iostream>
+#include <set>
 using namespace std;
 
-int minNum = 2000, num, jb, ja;
+int num;
+set<int> s;
 int main() {
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	for (int i = 0; i < 3; i++)
+	for (int i = 0; i < 10; i++)
 	{
 		cin >> num;
-		if (num < minNum) minNum = num;
+			s.insert(num%42);
 	}
 
-	cin >> ja >> jb;
-	minNum += ja < jb ? ja : jb;
-
-	cout << minNum - 50;
+	cout << s.size();
 }
