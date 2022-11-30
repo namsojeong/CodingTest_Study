@@ -17,6 +17,7 @@ int main()
 {
 	cin >> n >> m;
 
+
 	int temp;
 	for (int i = 0; i < n; i++)
 	{
