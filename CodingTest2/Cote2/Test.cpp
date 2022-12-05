@@ -1,43 +1,26 @@
 #include <iostream>
-#include <string>
-#include <vector>
 
 using namespace std;
 
-int a, b;
-vector <int> va;
-vector <int> vb;
+int h, m, ch, cm, tempM = 45;
 int main() {
+
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
-	cin >> a>>b;
+	cin >> h >> m;
 
-	while (a > 0)
+	ch = h;
+	cm = 60;
+	if (m < 45)
 	{
-		va.push_back(a % 10);
-		a /= 10;
+		tempM -= m;
+		cm -= tempM;
+		ch -= 1;
+		if (ch < 0) ch = 23;
 	}
-	while (b > 0)
-	{
-		vb.push_back(b % 10);
-		b /= 10;
+	else {
+		cm = m - 45;
 	}
-	a = b = 0;
-	int temp = 1;
-	while (!va.empty())
-	{
-		a += va.back()*temp;
-		temp *= 10;
-		va.pop_back();
-	}
-	temp = 1;
-	while (!vb.empty())
-	{
-		b += vb.back() * temp;
-		temp *= 10;
-		vb.pop_back();
-	}
-	int maxNum = a>b?a:b;
 
-	cout << maxNum;
+	cout << ch << " " << cm;
 }
