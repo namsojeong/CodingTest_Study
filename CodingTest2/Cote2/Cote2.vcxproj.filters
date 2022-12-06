@@ -249,5 +249,17 @@
     <ClCompile Include="베르트랑 공준.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="정수n개의합.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="연결요소의개수.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="파도반수열.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="평범한 배낭.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
