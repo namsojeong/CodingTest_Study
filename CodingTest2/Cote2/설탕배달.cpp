@@ -6,40 +6,30 @@ int cnt = 0;
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
+	ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
 	cin >> n;
 
 	int temp = n;
-
-	if (n < 5)
+	int tempNum = temp;
+	cnt = temp / 5;
+	while (true)
 	{
-		if (n % 3 == 0)cout << 1;
-		else cout << -1;
-	}
-	else
-	{
-		cnt += temp / 5;
-		temp %= 5;
-		if (temp == 0)
+		temp = tempNum;
+		if (cnt < 0)
 		{
-			cout << cnt;
+			cout << "-1";
+			return 0;
 		}
-		else if (temp < 3)
-		{
-			cout << -1;
-		}
-		else
+		tempNum = temp;
+		temp = temp - 5 * cnt;
+		if (temp % 3 == 0)
 		{
 			cnt += temp / 3;
-			temp %= 3;
-			if (temp == 0)cout << cnt;
-			else cout << -1;
+			break;
 		}
+		cnt--;
 	}
-
-	
+	cout << cnt;
 
 }

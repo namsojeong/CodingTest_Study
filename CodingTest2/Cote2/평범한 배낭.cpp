@@ -18,7 +18,7 @@ int main()
 	{
 		for (int j = 1; j <= k; j++)
 		{
-			if (k<DP[n][k])
+			if (w[i]>j)
 			{
 				DP[n][k] = DP[i - 1][j];
 			}
