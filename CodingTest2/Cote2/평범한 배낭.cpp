@@ -18,13 +18,14 @@ int main()
 	{
 		for (int j = 1; j <= k; j++)
 		{
-			if (w[i]>j)
+			// i의 무게가 초과하면
+			if (w[i] > j)
 			{
-				DP[n][k] = DP[i - 1][j];
+				DP[i][j] = DP[i - 1][j]; // 물건을 i-1까지만 담았을 떄 가치
 			}
 			else
 			{
-				DP[n][k] = max(DP[i-1][j], DP[i-1][j]-w[i]) + v[i];
+				DP[i][j] = max(DP[i-1][j], DP[i-1][j - w[i]] + v[i]); // 아이템 i를 담았을 떄 물건 I를 담지않았을 때 가치 중 큰 값
 			}
 		}
 	}
