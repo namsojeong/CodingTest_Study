@@ -2,25 +2,17 @@
 
 using namespace std;
 
-int h, m, ch, cm, tempM = 45;
+int t, a, b;
+
 int main() {
 
 	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+	cin >> t;
 
-	cin >> h >> m;
-
-	ch = h;
-	cm = 60;
-	if (m < 45)
+	for (int i = 1; i <= t; i++)
 	{
-		tempM -= m;
-		cm -= tempM;
-		ch -= 1;
-		if (ch < 0) ch = 23;
-	}
-	else {
-		cm = m - 45;
+		cin >> a >> b;
+		cout << "Case #" << i << ": " << a + b << "\n";
 	}
 
-	cout << ch << " " << cm;
 }
