@@ -1,17 +1,16 @@
 #include <iostream>
 using namespace std;
 
-int n, cnt=0;
-		int temp;
+int t, a,b;
 int main()
 {
-	cin >> n;
+	cin >> t;
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < t; i++)
 	{
-		cin >> temp;
-		if (temp == n) cnt++;
+		cin >> a >> b;
+
+		cout << "Case #" << i + 1 << ": " << a << " + " << b << " = " << a+b<<"\n";
 	}
 
-	cout << cnt;
 }
