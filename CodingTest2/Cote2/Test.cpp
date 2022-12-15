@@ -1,18 +1,17 @@
 #include <iostream>
-
 using namespace std;
 
-int t, a, b;
+int n, cnt=0;
+		int temp;
+int main()
+{
+	cin >> n;
 
-int main() {
-
-	ios::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
-	cin >> t;
-
-	for (int i = 1; i <= t; i++)
+	for (int i = 0; i < 5; i++)
 	{
-		cin >> a >> b;
-		cout << "Case #" << i << ": " << a + b << "\n";
+		cin >> temp;
+		if (temp == n) cnt++;
 	}
 
+	cout << cnt;
 }
