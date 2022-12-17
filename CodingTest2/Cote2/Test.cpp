@@ -1,16 +1,19 @@
 #include <iostream>
+#include <set>
 using namespace std;
 
-int t, a,b;
+	int temp;
+set<int> s;
 int main()
 {
-	cin >> t;
-
-	for (int i = 0; i < t; i++)
+	for(int i=0;i<3;i++)
 	{
-		cin >> a >> b;
-
-		cout << "Case #" << i + 1 << ": " << a << " + " << b << " = " << a+b<<"\n";
+	cin >> temp;
+	s.insert(temp);
 	}
+	
+	s.erase(s.begin());
+	set<int>::iterator iter = s.begin();
+	cout << *iter;
 
 }
