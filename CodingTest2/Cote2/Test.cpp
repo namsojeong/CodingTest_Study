@@ -1,22 +1,30 @@
 #include <iostream>
+#include <map>
 using namespace std;
 
 string str;
-bool isEnd = false;
+int arr[27] = { -1,-1, -1, -1,  };
 int main()
 {
+	ios::sync_with_stdio(false); cin.tie(NULL);  cout.tie(NULL);
+	fill_n(arr, 26, -1);
+
 	cin >> str;
 
-	int i = 0, j=10;
-	while (true)
+	for (int i = 0; i < str.length(); i++)
 	{
-		if (i + 10 >= str.length())
+		if (arr[str[i] - 97] == -1)
 		{
-			isEnd = true;
-			j = (str.length()) - i;
+			arr[str[i] - 97] = i;
+			cout << str[i]-97 << endl;
 		}
-		cout << str.substr(i, j) << "\n";
-		if (isEnd)break;
-		i +=10;
 	}
+
+
+	for (int i = 0; i < 26; i++)
+	{
+		cout << arr[i]<<" ";
+	}
+
+	return 0;
 }
