@@ -1,16 +1,13 @@
 #include <iostream>
 using namespace std;
 
-int n;
-string str;
+long long n, m;
 int main()
 {
 	ios::sync_with_stdio(false); cin.tie(NULL);  cout.tie(NULL);
 
-	cin >> n;
-	for (int i = 0; i < n; i++)
-	{
-		cin >> str;
-		cout << str[0] << str[str.size() - 1]<<"\n";
-	}
+	cin >> n >> m;
+	long long temp = n - m;
+	temp = temp < 0 ? temp * -1 : temp;
+	cout << temp;
 }
