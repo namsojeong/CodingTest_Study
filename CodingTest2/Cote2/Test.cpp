@@ -1,19 +1,17 @@
 #include <iostream>
-#include <vector>
 using namespace std;
 
-vector<pair<int, int>> v;
-int n, m;
+int fac(int a)
+{
+	if (a == 1) return 1;
+	if (a == 0) return 1;
+	return fac(a - 1) * fac(a - 2);
+}
+int n;
 int main()
 {
 	ios::sync_with_stdio(false); cin.tie(NULL);  cout.tie(NULL);
 
-	for (int i = 0; i < 3; i++)
-	{
-		cin >> n, m;
-		v.push_back({ n, m });
-	}
-
-
+	cin >> n;
 
 }
